@@ -15,18 +15,9 @@ def index():
 
 @app.route('/upload', methods=['POST'])
 def upload_file():
-    # Check if the POST request has a file part
-    if 'file' not in request.files:
-        return "No file part", 400
-    
-    file = request.files['file']
-    if file.filename == '':
-        return "No selected file", 400
-    
-    if file:
-        file_path = os.path.join(app.config['UPLOAD_FOLDER'], file.filename)
-        file.save(file_path)
-        return f"File uploaded successfully: {file.filename}", 200
+    ######################
+    # ✨ Your code here. #
+    ######################
 
 @app.route('/uploads/<filename>')
 def uploaded_file(filename):
